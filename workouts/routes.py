@@ -10,7 +10,8 @@ def home():
 
 @app.route("/body_categories")
 def categories():
-    return render_template("body_categories.html")
+    categories = list(Category.query.order_by(Category.category_name).all())
+    return render_template("body_categories.html", categories=categories)
 
 
 @app.route("/add_body_category", methods=["GET", "POST"])
@@ -19,5 +20,5 @@ def add_body_category():
         category = Category(category_name=request.form.get("category_name"))
         db.session.add(category)
         db.session.commit()
-        return redirect(url_for("body_categories"))
+        return redirect(url_for("categories"))
     return render_template("add_body_category.html")
