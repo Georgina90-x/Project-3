@@ -1,8 +1,15 @@
+.special-elite-regular {
+    font-family: "Special Elite", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 /* sticky footer */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: "Special Elite", serif;
   }
 
   main {
