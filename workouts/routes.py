@@ -4,4 +4,4 @@ from workouts.models import Category, Exercise
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("workouts.html")

@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}" type="text/css">
     <title>Workouts</title>
 </head>
 <body>
-    Hello World!
+    <header>
+        <nav class="pink darken-1">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Workout Organiser</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="">New Workout</a></li>
+                <li><a href="">Body Category</a></li>
+              </ul>
+            </div>
+          </nav>
+        <!-- MOBILE SIDENAV-->
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="">New Workout</a></li>
+            <li><a href="">Body Category</a></li>
+
+          </ul>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="page-footer pink darken-1">
+        <div class="footer-copyright">
+          <div class="container">
+          Get Organised On Your Fitness Journey
+          <a class="white-text right" href="#!" target="_blank">&copy; Georgina Kidger 2025</a>
+          </div>
+        </div>
+      </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
